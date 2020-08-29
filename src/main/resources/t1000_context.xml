@@ -8,12 +8,13 @@
 	
 	<import resource="toshiba_context.xml" />
 	<import resource="sony_context.xml" />
-<!--	<import resource="db_context.xml" /> -->
+	<import resource="db_context.xml" />
 
     <bean id="t1000" class="com.uspehgp.robotspring.impls.robot.ModelT1000"
           p:hand-ref="toshibaHand"
           p:leg-ref="sonyLeg"
           p:head-ref="sonyHead"
+          depends-on="databaseBean"
     >
 
         <constructor-arg value="silver" index="0" type="java.lang.String"/>
@@ -30,8 +31,5 @@
         <constructor-arg ref="toshibaHead" />
 
     </bean>
-
-
-
 
 </beans>
