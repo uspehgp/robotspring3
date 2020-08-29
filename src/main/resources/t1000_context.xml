@@ -10,25 +10,20 @@
 	<import resource="sony_context.xml" />
 	<import resource="db_context.xml" />
 
-    <bean id="t1000" class="com.uspehgp.robotspring.impls.robot.ModelT1000"
-          p:hand-ref="toshibaHand"
-          p:leg-ref="sonyLeg"
-          p:head-ref="sonyHead"
-          depends-on="databaseBean"
-    >
+    <bean id="t1000" parent="BaseModel">
 
-        <constructor-arg value="silver" index="0" type="java.lang.String"/>
-        <constructor-arg value="2020" index="1" type="int"/>
-        <constructor-arg value="true" index="2" type="boolean"/>
+        <constructor-arg value="silver" index="3" type="java.lang.String"/>
+        <constructor-arg value="2020" index="4" type="int"/>
+        <constructor-arg value="true" index="5" type="boolean"/>
 
 	</bean>
 
 
-    <bean id="t1000Empty" class="com.uspehgp.robotspring.impls.robot.ModelT1000">
+    <bean id="BaseModel" class="com.uspehgp.robotspring.impls.robot.ModelT1000">
 
-        <constructor-arg ref="sonyHand" />
-        <constructor-arg ref="sonyLeg" />
-        <constructor-arg ref="toshibaHead" />
+        <constructor-arg ref="sonyHand" index="0"/>
+        <constructor-arg ref="sonyLeg" index="1"/>
+        <constructor-arg ref="toshibaHead" index="2"/>
 
     </bean>
 
