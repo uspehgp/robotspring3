@@ -19,7 +19,7 @@
 	</bean>
 
 
-    <bean id="BaseModel" class="com.uspehgp.robotspring.impls.robot.ModelT1000">
+    <bean id="BaseModel" abstract="true" class="com.uspehgp.robotspring.impls.robot.ModelT1000">
 
         <constructor-arg ref="sonyHand" index="0"/>
         <constructor-arg ref="sonyLeg" index="1"/>
