@@ -12,5 +12,9 @@
 	
     <bean class="com.uspehgp.robotspring.MyBeanPostProcessor"/>
 
+    <bean id="t1000Conveyor" class="com.uspehgp.robotspring.impls.conveyor.T1000Conveyor">
+        <lookup-method name="createRobot" bean="t1000" />
+    </bean>
+
 
 </beans>
