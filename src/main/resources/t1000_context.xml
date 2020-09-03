@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xmlns:p="http://www.springframework.org/schema/p"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd"
        default-lazy-init="true"
 >
@@ -10,13 +9,17 @@
 	<import resource="sony_context.xml" />
 	<import resource="db_context.xml" />
 
+    <bean id="actionReplacer" class="com.uspehgp.robotspring.impls.robot.ActionReplacer"/>
+
     <bean id="t1000" parent="BaseModel" scope="prototype">
 
         <constructor-arg value="silver" index="3" type="java.lang.String"/>
         <constructor-arg value="2020" index="4" type="int"/>
         <constructor-arg value="true" index="5" type="boolean"/>
 
-	</bean>
+        <replaced-method name="action" replacer="actionReplacer"></replaced-method>
+
+    </bean>
 
 
     <bean id="BaseModel" abstract="true" class="com.uspehgp.robotspring.impls.robot.ModelT1000">

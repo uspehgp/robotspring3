@@ -33,6 +33,8 @@ public class RobotspringApplication {
 
         ((ConfigurableApplicationContext)context).close();
 
+        terminator1.action();
+
         //SpringApplication.run(RobotspringApplication.class, args);
     }
 
