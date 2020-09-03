@@ -1,5 +1,6 @@
 package com.uspehgp.robotspring;
 
+import com.uspehgp.robotspring.impls.pool.T1000Pool;
 import com.uspehgp.robotspring.impls.robot.ModelT1000;
 import com.uspehgp.robotspring.interfaces.Robot;
 import com.uspehgp.robotspring.interfaces.RobotConveyor;
@@ -23,19 +24,22 @@ public class RobotspringApplication {
 
         RobotConveyor t1000Conveyor = (RobotConveyor) context.getBean("t1000Conveyor");
 
-        Robot terminator1 = t1000Conveyor.createRobot();
-        Robot terminator2 = t1000Conveyor.createRobot();
-        Robot terminator3 = t1000Conveyor.createRobot();
-
-        System.out.println("terminator1 - " + terminator1);
-        System.out.println("terminator2 - " + terminator2);
-        System.out.println("terminator3 - " + terminator3);
-
-        ((ConfigurableApplicationContext)context).close();
-
-        terminator1.action();
+//        Robot terminator1 = t1000Conveyor.createRobot();
+//        Robot terminator2 = t1000Conveyor.createRobot();
+//        Robot terminator3 = t1000Conveyor.createRobot();
+//
+//        System.out.println("terminator1 - " + terminator1);
+//        System.out.println("terminator2 - " + terminator2);
+//        System.out.println("terminator3 - " + terminator3);
+//
+//        ((ConfigurableApplicationContext)context).close();
+//
+//        terminator1.action();
 
         //SpringApplication.run(RobotspringApplication.class, args);
+
+        T1000Pool t1000Pool = (T1000Pool) context.getBean("T1000Pool");
+        t1000Pool.action();
     }
 
 }

@@ -1,4 +1,4 @@
-package com.uspehgp.robotspring.impls.robot;
+package com.uspehgp.robotspring.abstracts.robot;
 
 import com.uspehgp.robotspring.interfaces.Hand;
 import com.uspehgp.robotspring.interfaces.Head;

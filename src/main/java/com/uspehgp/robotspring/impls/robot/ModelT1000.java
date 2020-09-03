@@ -1,5 +1,6 @@
 package com.uspehgp.robotspring.impls.robot;
 
+import com.uspehgp.robotspring.abstracts.robot.BaseModel;
 import com.uspehgp.robotspring.interfaces.Hand;
 import com.uspehgp.robotspring.interfaces.Head;
 import com.uspehgp.robotspring.interfaces.Leg;
@@ -27,11 +28,11 @@ public class ModelT1000 extends BaseModel implements InitializingBean, Disposabl
 	}
 
 	public ModelT1000(String color, int year, boolean soundEnabled) {
-		super();
 		this.color = color;
 		this.year = year;
 		this.soundEnabled = soundEnabled;
 	}
+
 	@Override
 	public void action() {
 		getHead().calc();
